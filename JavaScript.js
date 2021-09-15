@@ -2,7 +2,7 @@
 
 var td_num = 100;
 var init_tr_num = 100;
-
+var code_A = 65;
 window.onload = function ()
 {
 
@@ -39,7 +39,7 @@ window.onload = function ()
     }
     function decompose(cellRef) {
         return {
-            col: cellRef.substring(0, 1).charCodeAt(0) - codeA,
+            col: cellRef.substring(0, 1).charCodeAt(0) - code_A,
             row: cellRef.substring(1) * 1
         };
     }
@@ -51,7 +51,7 @@ window.onload = function ()
         var e = decompose(end);
         for (var y = s.row; y <= e.row; ++y)
             for (var x = s.col; x <= e.col; ++x)
-                sum += DATA[String.fromCharCode(codeA + x) + y];
+                sum += DATA[String.fromCharCode(code_A + x) + y];
         return sum;
     };
 
