@@ -45,15 +45,7 @@ window.onload = function ()
     }
 
     var DATA = {}, INPUTS = [].slice.call(document.querySelectorAll("input"));
-    DATA.SUM = function (start, end) {
-        var sum = 0;
-        var s = decompose(start);
-        var e = decompose(end);
-        for (var y = s.row; y <= e.row; ++y)
-            for (var x = s.col; x <= e.col; ++x)
-                sum += DATA[String.fromCharCode(code_A + x) + y];
-        return sum;
-    };
+
 
     INPUTS.forEach(function ($) {
         $.onfocus = function (e) {
